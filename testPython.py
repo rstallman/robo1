@@ -1,9 +1,5 @@
 import numpy as np
 
-xx = np.zeros((3,2))
-
-
-print('xx', xx)
 
 def  myfun(x):
 
@@ -18,13 +14,13 @@ def minList(arr):
 
     return res
 
-
 def maxList(arr):
     res = arr[0]
 
     for elem in arr:
         if elem > res:
             res = elem
+
 
 
     return res
