@@ -1,16 +1,19 @@
 
-function maxArr(arr) {
+function maxArr(arr, compFunc) {
 
     res = arr[0];
 
     for(i = 0; i < arr.length; i++) {
 
-        if (arr[i] > res) res = arr[i];
+        if (compFunc(arr[i], res) > 0) res = arr[i];
     }
 
     return res;
 
 }
+
+
+
 
 function fib(n) {
 
@@ -22,5 +25,5 @@ function fib(n) {
         
 }
 
-console.log('res', maxArr([1, 3, 50, 7]));
+console.log('res', maxArr([1, 3, 50, 7], (a, b) => b - a));
 console.log('fib(20):', fib(20));
