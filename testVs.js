@@ -48,5 +48,21 @@ var parameters = {
   };
   
   // functionPlot(parameters);
-  
-  
+  var p = {
+    firstName: 'Jinliang',
+    lastName: 'Li',
+  };
+
+  console.log('p:', p)
+
+
+  function newSum() {
+    var i, res = 0;
+    var numberOfParameters = arguments.length;
+    for (i = 0; i < numberOfParameters; i++) {
+       res += arguments[i];
+    }
+    return res;
+}
+
+console.log('newSum:', newSum(1, 3, 5, 7, 100))
