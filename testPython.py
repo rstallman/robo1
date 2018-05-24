@@ -13,7 +13,7 @@ def maxList(arr):
 
 print('res:', maxList([1, 3, 5, 7, 10.1, -100]))
 
-def calcPi(numTrials = 100000):
+def calcPi(numTrials = 10000):
     inCircle = 0 
     for _ in range(numTrials): 
         x = random.random()

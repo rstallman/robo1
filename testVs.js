@@ -1,3 +1,4 @@
+'use strict';
 
 function maxArr(arr, compFunc) {
 
@@ -12,11 +13,12 @@ function maxArr(arr, compFunc) {
 
 function fib(n) {
 
-    if (n <= 1) 
-        return n;
-    else
-        return fib(n-1) + fib(n-2); 
+    // if (n <= 1) 
+    //     return n;
+    // else
+    //     return fib(n-1) + fib(n-2); 
 
+    return n <= 1 ? n : fib(n-1) + fib(n-2);
 }
 
 function selectionSort(arr, start, stop, compFunc = ((a, b) => a - b)) {
@@ -41,10 +43,11 @@ function sort(arr, compFunc) {
 var arr = [100, 3, 5, -7, 2, 4, -6, 8, -10, 20];
 
 console.log('res', maxArr(arr, (a, b) => b - a));  // ES6
-console.log('fib(20):', fib(20));
+
+var xx = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17].map(e=>fib(e)); 
+console.log('xx:', xx);
 sort(arr, (x, y) => y - x);
 console.log('arr:', arr);
-console.log('xx');
 
 class Complex {
 
@@ -77,7 +80,7 @@ class Complex {
         var magOther = other.real * other.real + other.img * other.img;
         return magThis - magOther;
     }
-
+    
     toString() {
         return this.real + ' + ' + this.img + 'i';
     }
@@ -128,9 +131,10 @@ function piMonteCarlo(numTrials = 1000){
 
 var mean = function(arr) {
     var sum = 0.0;
-    for(var i = 0; i < arr.length; i++) {
-        sum += arr[i];
-    }
+    // for(var i = 0; i < arr.length; i++) {
+    //     sum += arr[i];
+    // }
+    arr.forEach(e => sum += e);
     return sum / arr.length;
 };
 
