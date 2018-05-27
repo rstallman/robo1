@@ -73,6 +73,27 @@ function createStack(){
 } 
 
 
+var alert = (msg) => {console.log(msg);}; // arrow function
+
+var person = {
+    name : ['Bob', 'Smith'],
+    age : 32,
+    gender : 'male',
+    interests : ['music', 'skiing'],
+    bio : function() {
+        alert(this.name[0] + ' ' + this.name[1] + ' is ' + person.age + ' years old. He likes ' + this.interests[0] + ' and ' + this.interests[1] + '.');
+    },
+    greeting: function() {
+        alert('Hi! I\'m ' + this.name[0] + '.');
+    },
+};
+
+var pp = person;
+
+pp.bio();
+pp.greeting();
+
+
 var stack = createStack();
 
 for(var i = 100; i < 110; i++) {

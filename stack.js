@@ -1,3 +1,6 @@
+
+'use strict';
+
 function Stack(){
     var top = null;
     var count = 0;
@@ -67,21 +70,27 @@ function Stack(){
 
 
 var stack = new Stack();
-
-var stack2 = new Stack();
-for(var i = 0; i < 10; i++) {
-    stack2.Push(i);
-}
-
-for(var i = 100; i < 110; i++) {
+for(let i = 100; i < 121; i++) {
     stack.Push(i);
 }
 
+var stack2 = new Stack();
+for(let i = 0; i < 10; i++) {
+    stack2.Push(i);
+}
+
+console.log('peep stack: ', stack.Peek());
+console.log('peep stack2: ', stack2.Peek());
+console.log('stack count: ', stack.GetCount());
+console.log('stack2 count: ', stack2.GetCount());
+
+console.log('pop all from stack!');
 while(!stack.isEmpty()){
     console.log(stack.Pop());
 }
 
 
+console.log('pop all from stack2!');
 while(!stack2.isEmpty()){
-    console.log(stack.Pop());
+    console.log(stack2.Pop());
 }
