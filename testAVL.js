@@ -8,7 +8,7 @@ function testBST() {
         readline = require('readline');
 
     var rd = readline.createInterface({
-        input: fs.createReadStream('JaneEyre.txt'),
+        input: fs.createReadStream('ATaleOfTwoCities.txt'),
         output: process.stdout,
         terminal: false
     });
@@ -39,12 +39,15 @@ function testBST() {
         var bstArray = bst.asSortedArray();
         bstArray.sort(((e1, e2) => e2[1] - e1[1]));
         
-        var freqArray = bstArray.filter(e => e[1] >= 100);
+        var freqArray = bstArray.filter(e => e[1] >= 500);
         
         // console.log(freqArray);
 
 
         freqArray.forEach(e => console.log(e));
+
+        var range = bst.range('r', 's');
+        range.forEach( e => console.log(e));
 
         console.log('AVL bst size: ', bst.size());
     });
