@@ -1,53 +1,3 @@
-'use strict';
-
-function maxArr(arr, compFunc) {
-
-    var res = arr[0];
-
-    for(var i = 0; i < arr.length; i++) {
-        if (compFunc(arr[i], res) > 0) {res = arr[i]; }
-    }
-    return res;
-}
-
-
-function fib(n) {
-
-    // if (n <= 1) 
-    //     return n;
-    // else
-    //     return fib(n-1) + fib(n-2); 
-
-    return n <= 1 ? n : fib(n-1) + fib(n-2);
-}
-
-function selectionSort(arr, start, stop, compFunc = ((a, b) => a - b)) {
-
-    for (var i = start; i <= stop; i++) {
-        // find index of minimum element starting from j
-        var minInd = i;
-        for (var j = i; j <= stop; j++) {
-            if (compFunc(arr[j], arr[minInd]) < 0) { minInd = j; }
-        }
-        // exch of (arr, i, index_of_min_elem);
-        [arr[i], arr[minInd]] = [arr[minInd], arr[i]];  // ES6
-
-    }
-}
-
-function sort(arr, compFunc) {
-    selectionSort(arr, 0, arr.length - 1, compFunc);
-}
-
-
-var arr = [100, 3, 5, -7, 2, 4, -6, 8, -10, 20];
-
-console.log('res', maxArr(arr, (a, b) => b - a));  // ES6
-
-var xx = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17].map(e=>fib(e)); 
-console.log('xx:', xx);
-sort(arr, (x, y) => y - x);
-console.log('arr:', arr);
 
 class Complex {
 
@@ -90,10 +40,6 @@ class Complex {
 var cpx1 =  new Complex(1, 1);
 var cpx2 =  new Complex(1, -1);
 console.log('cpx1.plus(cpx2): ' + cpx1.plus(cpx2));
-
-
-let days = ['Mon', 'Tues', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
-days.forEach(e=>console.log(e));
 
 
 (function() {
